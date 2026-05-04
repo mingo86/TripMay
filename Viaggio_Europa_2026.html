@@ -381,18 +381,18 @@ const ACT_COSTS=[
 const ACT_TOT="~236€";
 // ─── FOOD COSTS ───
 const FOOD_COSTS=[
-{n:{it:"Madrid (1 giorno)",pt:"Madrid (1 dia)"},v:"~30–40€"},
-{n:{it:"Milano (panzerotto + aperitivo)",pt:"Milão (panzerotto + aperitivo)"},v:"~15–22€"},
-{n:{it:"Cinque Terre (pranzo)",pt:"Cinque Terre (almoço)"},v:"~20–30€"},
-{n:{it:"Firenze (pranzo + cena)",pt:"Florença (almoço + jantar)"},v:"~25–36€"},
-{n:{it:"Val d'Orcia (pranzo + cena)",pt:"Val d'Orcia (almoço + jantar)"},v:"~30–42€"},
-{n:{it:"Orvieto (pranzo)",pt:"Orvieto (almoço)"},v:"~16–22€"},
-{n:{it:"Roma (2 giorni)",pt:"Roma (2 dias)"},v:"~55–76€"},
-{n:{it:"Verona + Venezia",pt:"Verona + Veneza"},v:"~30–44€"},
-{n:{it:"Amsterdam (snack + lounge)",pt:"Amsterdã (snack + lounge)"},v:"~15–20€"},
-{n:{it:"Parigi (3 giorni)",pt:"Paris (3 dias)"},v:"~80–120€"},
+{n:{it:"Madrid (1 giorno: pranzo + cena + tapas)",pt:"Madrid (1 dia: almoço + jantar + tapas)"},v:"~50–70€"},
+{n:{it:"Milano (panzerotto + aperitivo + snack)",pt:"Milão (panzerotto + aperitivo + snack)"},v:"~20–30€"},
+{n:{it:"Cinque Terre (pranzo + focaccia + gelato)",pt:"Cinque Terre (almoço + focaccia + gelato)"},v:"~40–55€"},
+{n:{it:"Firenze (colaz. + pranzo + cena + gelato)",pt:"Florença (café + almoço + jantar + gelato)"},v:"~65–90€"},
+{n:{it:"Val d'Orcia (pranzo + cena + degustazione)",pt:"Val d'Orcia (almoço + jantar + degustação)"},v:"~60–85€"},
+{n:{it:"Orvieto / Narni / Calcata (pranzo + snack)",pt:"Orvieto / Narni / Calcata (almoço + snack)"},v:"~35–50€"},
+{n:{it:"Roma (2 giorni: colaz. + pranzo + cena ×2)",pt:"Roma (2 dias: café + almoço + jantar ×2)"},v:"~130–180€"},
+{n:{it:"Verona + Venezia (pranzo + cena + cicchetti)",pt:"Verona + Veneza (almoço + jantar + cicchetti)"},v:"~60–85€"},
+{n:{it:"Amsterdam (lounge + snack centro)",pt:"Amsterdã (lounge + snack centro)"},v:"~25–40€"},
+{n:{it:"Parigi (3 giorni: colaz. + pranzo + cena ×3)",pt:"Paris (3 dias: café + almoço + jantar ×3)"},v:"~200–280€"},
 ];
-const FOOD_TOT={it:"~320–450€ (per 2 persone)",pt:"~320–450€ (para 2 pessoas)"};
+const FOOD_TOT={it:"~685–965€ (per 2 persone)",pt:"~685–965€ (para 2 pessoas)"};
 
 const KEY='trip2026_sel_v5';
 let sel;try{sel=JSON.parse(localStorage.getItem(KEY))}catch(e){}
@@ -433,7 +433,7 @@ ACT_COSTS.forEach(i=>{h+='<div class="cost-row"><span>'+T(i.n)+'</span><span>'+i
 h+='<div class="cost-row"><span>Totale/Total</span><span>'+ACT_TOT+'</span></div></div></div></div>';
 
 // Food costs
-h+='<div class="collapsible"><div class="coll-header" onclick="toggleColl(this)"><h3>🍽 '+(lang==='it'?'Stima costi cibo — ~320–450€':'Estimativa custos comida — ~320–450€')+'</h3><span class="coll-arrow">▼</span></div><div class="coll-body"><div class="cost-box"><b>'+(lang==='it'?'Stima per 2 persone':'Estimativa para 2 pessoas')+'</b>';
+h+='<div class="collapsible"><div class="coll-header" onclick="toggleColl(this)"><h3>🍽 '+(lang==='it'?'Stima costi cibo — ~685–965€':'Estimativa custos comida — ~685–965€')+'</h3><span class="coll-arrow">▼</span></div><div class="coll-body"><div class="cost-box"><b>'+(lang==='it'?'Stima per 2 persone':'Estimativa para 2 pessoas')+'</b>';
 FOOD_COSTS.forEach(i=>{h+='<div class="cost-row"><span>'+T(i.n)+'</span><span>'+i.v+'</span></div>'});
 h+='<div class="cost-row"><span>Totale/Total</span><span>'+T(FOOD_TOT)+'</span></div></div></div></div>';
 
